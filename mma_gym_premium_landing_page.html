@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي الأبطال للفنون القتالية | MMA Gym Premium</title>
+    <meta name="description" content="النادي الأول للفنون القتالية المختلطة، الملاكمة، الجيو جيتسو، واللياقة البدنية. تدرب مع أبطال عالميين في بيئة احترافية.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="نادي الأبطال | MMA Gym Premium">
+    <meta property="og:description" content="انضم إلى مجتمع الأبطال واحصل على حصة تجريبية مجانية اليوم.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E60000',
+                            redHover: '#cc0000',
+                            dark: '#0a0a0a',
+                            darker: '#050505',
+                            gray: '#121212',
+                            cardBg: '#181818',
+                            lightGray: '#2a2a2a'
+                        }
+                    },
+                    boxShadow: {
+                        'red-glow': '0 0 25px rgba(230, 0, 0, 0.35)',
+                        'red-glow-lg': '0 0 40px rgba(230, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Styles -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(230, 0, 0, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(230, 0, 0, 0.3);
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E60000;
+        }
+    </style>
+</head>
+<body class="antialiased bg-brand-darker text-gray-100 selection:bg-brand-red selection:text-white">
+
+    <!-- 1. NAVBAR SECTION -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/5" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-brand-red flex items-center justify-center rounded transform rotate-3 group-hover:rotate-0 transition-transform shadow-red-glow">
+                        <span class="text-black font-black text-xl tracking-tighter">C</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black text-white tracking-tight leading-none">نادي <span class="text-brand-red">الأبطال</span></span>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-tight">CHAMPIONS GYM</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-bold text-gray-200 hover:text-brand-red transition-colors">الرئيسية</a>
+                    <a href="#programs" class="text-sm font-bold text-gray-300 hover:text-brand-red transition-colors">البرامج</a>
+                    <a href="#why-us" class="text-sm font-bold text-gray-300 hover:text-brand-red transition-colors">لماذا الأبطال</a>
+                    <a href="#trainers" class="text-sm font-bold text-gray-300 hover:text-brand-red transition-colors">المدربون</a>
+                    <a href="#pricing" class="text-sm font-bold text-gray-300 hover:text-brand-red transition-colors">العضويات</a>
+                    <a href="#about" class="text-sm font-bold text-gray-300 hover:text-brand-red transition-colors">من نحن</a>
+                    <a href="#contact" class="text-sm font-bold text-gray-300 hover:text-brand-red transition-colors">تواصل معنا</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="#trial" class="bg-brand-red hover:bg-brand-redHover text-white px-6 py-3 rounded-lg font-extrabold text-sm shadow-red-glow transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+                        <span>احجز تجربة مجانية</span>
+                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-300 hover:text-white focus:outline-none" aria-label="قائمة الموبايل">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark/95 backdrop-blur-xl border-b border-brand-lightGray px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col gap-4">
+                <a href="#home" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">الرئيسية</a>
+                <a href="#programs" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">البرامج</a>
+                <a href="#why-us" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">لماذا الأبطال</a>
+                <a href="#trainers" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">المدربون</a>
+                <a href="#pricing" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">العضويات</a>
+                <a href="#about" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">من نحن</a>
+                <a href="#contact" class="mobile-link text-lg font-bold text-white hover:text-brand-red py-2 border-b border-white/5">تواصل معنا</a>
+                <a href="#trial" class="mobile-link bg-brand-red text-center text-white py-3 rounded-lg font-black mt-2 shadow-red-glow">احجز تجربة مجانية</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Hero Background Image & Gradient -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1920&q=80" alt="MMA Arena Gym" class="w-full h-full object-cover object-center opacity-40 scale-105 transform animate-pulse" style="animation-duration: 8s;" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-transparent to-brand-darker opacity-90"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center lg:text-right">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-8 flex flex-col items-center lg:items-start">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red font-bold text-xs md:text-sm mb-6 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+                        أكاديمية تدريب الفنون القتالية الأولى
+                    </div>
+
+                    <!-- Main H1 Title -->
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tight">
+                        اصنع القوة.<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-white">احترف القتال.</span><br>
+                        عِش كالأبطال.
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-gray-300 text-lg md:text-xl font-medium max-w-2xl mb-8 leading-relaxed">
+                        انضم إلى النادي الأحدث المتخصص في الفنون القتالية المختلطة والتجهيز البدني. برامج تدريبية احترافية تناسب جميع المستويات تحت إشراف نخبة من أبطال العالم.
+                    </p>
+
+                    <!-- Hero CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a href="#trial" class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-4 rounded-xl font-black text-lg shadow-red-glow hover:shadow-red-glow-lg transition-all text-center flex items-center justify-center gap-3">
+                            <span>احجز تجربة مجانية</span>
+                            <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                        <a href="#programs" class="bg-brand-gray/80 hover:bg-brand-lightGray text-white border border-white/10 hover:border-brand-red/40 px-8 py-4 rounded-xl font-bold text-lg transition-all text-center backdrop-blur-sm">
+                            تصفح البرامج التدريبية
+                        </a>
+                    </div>
+
+                    <!-- Trust Bar Badges -->
+                    <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-6 text-center lg:text-right w-full max-w-xl">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1">
+                                <span>4.9</span>
+                                <span class="text-yellow-500 text-xl">★</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-gray-400 font-semibold mt-1">تقييمات المشركين</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-brand-red">+500</div>
+                            <p class="text-xs sm:text-sm text-gray-400 font-semibold mt-1">عضو نشط</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-white">+10</div>
+                            <p class="text-xs sm:text-sm text-gray-400 font-semibold mt-1">مدربين محترفين</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Card / Visual Element -->
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="relative mx-auto w-full max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-red to-red-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative glass-card p-6 rounded-2xl border border-white/10 shadow-2xl">
+                            <div class="relative h-80 rounded-xl overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="MMA Training" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                                <span class="absolute bottom-3 right-3 bg-brand-red text-white text-xs font-black px-3 py-1 rounded-md">LIVE SESSION</span>
+                            </div>
+                            <h3 class="text-xl font-black text-white mb-2">حصة الفنون القتالية القادمة</h3>
+                            <p class="text-gray-400 text-sm mb-4">MMA Advanced Sparring & Technique</p>
+                            <div class="flex items-center justify-between text-xs text-gray-300 font-bold bg-brand-dark p-3 rounded-lg border border-white/5">
+                                <span>اليوم: 07:00 مساءً</span>
+                                <span class="text-brand-red">المقاعد المتبقية: 3 فقط</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TRUST BAR / SPORTS BANNER -->
+    <section class="py-6 bg-brand-gray border-y border-white/10 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-6 text-center text-gray-400 font-black text-sm sm:text-base md:text-lg uppercase tracking-wider">
+                <span class="hover:text-brand-red transition-colors cursor-default">الملاكمة BOXING</span>
+                <span class="hidden sm:inline text-brand-red/40">•</span>
+                <span class="hover:text-brand-red transition-colors cursor-default">MMA القتال المختلط</span>
+                <span class="hidden sm:inline text-brand-red/40">•</span>
+                <span class="hover:text-brand-red transition-colors cursor-default">الكيك بوكسينغ</span>
+                <span class="hidden sm:inline text-brand-red/40">•</span>
+                <span class="hover:text-brand-red transition-colors cursor-default">BJJ الجيو جيتسو</span>
+                <span class="hidden sm:inline text-brand-red/40">•</span>
+                <span class="hover:text-brand-red transition-colors cursor-default">اللياقة البدنية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROGRAMS SECTION -->
+    <section id="programs" class="py-24 bg-brand-darker relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">برامجنا الاحترافية</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white leading-tight">اختر التخصص القتالي الذي يناسب أهدافك</p>
+                <p class="text-gray-400 mt-4 text-base">تم تصميم كافة البرامج لترتقي بلياقتك، قدرتك القتالية، وانضباطك الذهني.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Program Card 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="الملاكمة" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-red border border-brand-red/30 text-xs font-bold px-3 py-1.5 rounded-full">BOXING</span>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-2xl font-black text-white mb-2">الملاكمة (Boxing)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            تعلّم تقنيات اللكم، المراوغة، وسرعة البديهة على أيدي مدربين معتمدين دولياً لبناء قوة لكمات فائقة.
+                        </p>
+                        <a href="#trial" class="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all">
+                            <span>اعرف المزيد عن البرنامج</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program Card 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="MMA" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-red border border-brand-red/30 text-xs font-bold px-3 py-1.5 rounded-full">MMA</span>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-2xl font-black text-white mb-2">الفنون القتالية المختلطة</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            البرنامج الشامل للقتال الواقف والإخضاع الأراضي. يدمج بين أفضل مهارات الملاكمة، المصارعة، والـ BJJ.
+                        </p>
+                        <a href="#trial" class="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all">
+                            <span>اعرف المزيد عن البرنامج</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program Card 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="الكيك بوكسينغ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-red border border-brand-red/30 text-xs font-bold px-3 py-1.5 rounded-full">KICKBOXING</span>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-2xl font-black text-white mb-2">الكيك بوكسينغ</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            دمج مثالي بين لكمات الملاكمة وركلات الأرجل القوية لتحسين اللياقة البدنية وحرق السعرات بشكل مضاعف.
+                        </p>
+                        <a href="#trial" class="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all">
+                            <span>اعرف المزيد عن البرنامج</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program Card 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1564415303232-2127271e16f3?auto=format&fit=crop&w=800&q=80" alt="الجيو جيتسو البرازيلية" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-red border border-brand-red/30 text-xs font-bold px-3 py-1.5 rounded-full">BJJ</span>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-2xl font-black text-white mb-2">الجيو جيتسو البرازيلية</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            فن القتال الأرضي والدفاع عن النفس باستخدام الروافع والمثبتات لتغلب على الخصم بغض النظر عن حجمه.
+                        </p>
+                        <a href="#trial" class="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all">
+                            <span>اعرف المزيد عن البرنامج</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program Card 5 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="التدريب الشخصي" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-red border border-brand-red/30 text-xs font-bold px-3 py-1.5 rounded-full">1-ON-1</span>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-2xl font-black text-white mb-2">التدريب الشخصي (1-on-1)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            خطة تدريب وتغذية مخصصة بالكامل لأهدافك الشخصية مع متابعة دقيقة ومباشرة من أفضل المدربين.
+                        </p>
+                        <a href="#trial" class="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all">
+                            <span>اعرف المزيد عن البرنامج</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program Card 6 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="اللياقة البدنية الوظيفية" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-brand-red border border-brand-red/30 text-xs font-bold px-3 py-1.5 rounded-full">FITNESS</span>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-2xl font-black text-white mb-2">اللياقة البدنية الوظيفية</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            تمارين مكثفة لزيادة التحمل العضلي، القوة الفائقة، والتنفس للوصول لأعلى مستويات اللياقة القتالية.
+                        </p>
+                        <a href="#trial" class="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all">
+                            <span>اعرف المزيد عن البرنامج</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE US -->
+    <section id="why-us" class="py-24 bg-brand-dark relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">مميزات النادي</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">لماذا تختار نادي الأبطال؟</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-brand-cardBg border border-white/5 hover:border-brand-red/40 transition-all text-center sm:text-right group reveal">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <!-- Icon Expert Coaches -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-3">مدربون خبراء</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">أبطال سابقون وحاصلون على حزام أسود بشهادات تدريب معتمدة عالمياً.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-brand-cardBg border border-white/5 hover:border-brand-red/40 transition-all text-center sm:text-right group reveal">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <!-- Icon Proven Methods -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-3">تدريب مثبت الفعالية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">منهجية تدريب علمية مصممة لتحقيق نتائج ملموسة في أقصر وقت ممكن.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-brand-cardBg border border-white/5 hover:border-brand-red/40 transition-all text-center sm:text-right group reveal">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <!-- Icon High Energy -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-3">مجتمع عالي الطاقة</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">بيئة حماسية ومشجعة تدفعك لتجاوز حدودك الذهنية والبدنية يومياً.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 rounded-2xl bg-brand-cardBg border border-white/5 hover:border-brand-red/40 transition-all text-center sm:text-right group reveal">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <!-- Icon All Levels -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-3">برامج لكل المستويات</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">سواء كنت مبتدئاً كلياً أو مقاتلاً محترفاً، لدينا الحصة المناسبة لك.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ABOUT SECTION -->
+    <section id="about" class="py-24 bg-brand-darker relative border-t border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- About Image Container -->
+                <div class="relative reveal">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80" alt="Inside Champions Gym" class="w-full h-[450px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand-red p-6 rounded-2xl shadow-red-glow hidden sm:block">
+                        <p class="text-4xl font-black text-white">10+</p>
+                        <p class="text-xs font-bold text-white/90">سنوات من التميز القتالي</p>
+                    </div>
+                </div>
+
+                <!-- About Text Content -->
+                <div class="reveal">
+                    <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">عن نادي الأبطال</h2>
+                    <h3 class="text-3xl sm:text-5xl font-black text-white leading-tight mb-6">مكان ينشأ فيه الأبطال وتتطور فيه العزيمة</h3>
+                    <p class="text-gray-300 text-base leading-relaxed mb-6">
+                        تأسس نادي الأبطال ليكون المركز الأحدث والأنسب لكل من يرغب في تعلم الفنون القتالية، بناء لياقة بدنية فائقة، واكتساب مهارات الدفاع عن النفس في بيئة احترافية وآمنة.
+                    </p>
+
+                    <!-- Mission & Values Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+                        <div>
+                            <h4 class="text-lg font-black text-white mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                                رسالتنا
+                            </h4>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">تمكين الأفراد ذهنياً وبدنياً من خلال الفنون القتالية والانضباط الرياضي.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-black text-white mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                                أسلوبنا التدريبي
+                            </h4>
+                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">التركيز على التكنيك الصحيح، السلامة، والتدرج المنظم في رفع الكفاءة.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="#trial" class="inline-flex items-center justify-center bg-white hover:bg-gray-200 text-black px-8 py-3.5 rounded-xl font-extrabold text-sm transition-all">
+                            انضم إلينا اليوم
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TRAINERS SECTION -->
+    <section id="trainers" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">الكادر التدريبي</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">تدرب تحت إشراف نخبة من الخبراء</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Trainer Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=800&q=80" alt="الكابتن طارق السعيد" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-xl font-black text-white mb-1">طارق السعيد</h3>
+                        <p class="text-brand-red font-bold text-xs mb-3">رئيس مدربي MMA</p>
+                        <p class="text-gray-400 text-xs mb-4">12+ سنة خبرة | بطل سابق في القتال المختلط</p>
+                        <div class="flex gap-3 text-gray-400">
+                            <a href="#" class="hover:text-brand-red transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="الكابتن كرم النجار" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-xl font-black text-white mb-1">كرم النجار</h3>
+                        <p class="text-brand-red font-bold text-xs mb-3">مدرب الملاكمة الرئيسي</p>
+                        <p class="text-gray-400 text-xs mb-4">9+ سنوات خبرة | مدرب ملاكمة أولمبي</p>
+                        <div class="flex gap-3 text-gray-400">
+                            <a href="#" class="hover:text-brand-red transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer Card 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1564415303232-2127271e16f3?auto=format&fit=crop&w=800&q=80" alt="الكابتن أليكس جيلفا" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-xl font-black text-white mb-1">أليكس سيلفا</h3>
+                        <p class="text-brand-red font-bold text-xs mb-3">مدرب BJJ الحزام الأسود</p>
+                        <p class="text-gray-400 text-xs mb-4">15+ سنة خبرة | متخصص الإخضاع الأرضي</p>
+                        <div class="flex gap-3 text-gray-400">
+                            <a href="#" class="hover:text-brand-red transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer Card 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="الكابتن سارة محمود" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-cardBg via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 bg-brand-cardBg">
+                        <h3 class="text-xl font-black text-white mb-1">سارة محمود</h3>
+                        <p class="text-brand-red font-bold text-xs mb-3">مدربة اللياقة والكيك بوكسينغ</p>
+                        <p class="text-gray-400 text-xs mb-4">7+ سنوات خبرة | اخصائية لياقة بدنية</p>
+                        <div class="flex gap-3 text-gray-400">
+                            <a href="#" class="hover:text-brand-red transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. RESULTS / TRANSFORMATIONS -->
+    <section class="py-24 bg-brand-darker border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">نتائج المتدربين</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">أشخاص حقيقيون. تقدم حقيقي.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Result Card 1 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl p-6 reveal">
+                    <div class="relative h-64 rounded-xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="نتائج التدريب" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-red text-white text-xs font-black px-3 py-1 rounded">خسر 14 كجم في 4 أشهر</span>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-1">عمر فاروق</h3>
+                    <p class="text-gray-400 text-xs">برنامج MMA + اللياقة الوظيفية</p>
+                </div>
+
+                <!-- Result Card 2 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl p-6 reveal">
+                    <div class="relative h-64 rounded-xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="نتائج التدريب" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-red text-white text-xs font-black px-3 py-1 rounded">بطل بطولة الهواة 2025</span>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-1">مازن الشريف</h3>
+                    <p class="text-gray-400 text-xs">برنامج الملاكمة الاحترافي</p>
+                </div>
+
+                <!-- Result Card 3 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl p-6 reveal">
+                    <div class="relative h-64 rounded-xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="نتائج التدريب" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-red text-white text-xs font-black px-3 py-1 rounded">تحسين التحمل العضلي +80%</span>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-1">ياسمين حسن</h3>
+                    <p class="text-gray-400 text-xs">التدريب الشخصي 1-on-1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. GALLERY SECTION -->
+    <section class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">معرض الصور</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">جولة داخل النادي</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="h-64 rounded-2xl overflow-hidden group relative reveal">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="حلبة التدريب" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold text-white">حلبة الملاكمة</div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden group relative reveal">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="أجهزة اللياقة" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold text-white">منطقة اللياقة</div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden group relative reveal">
+                    <img src="https://images.unsplash.com/photo-1564415303232-2127271e16f3?auto=format&fit=crop&w=800&q=80" alt="تدريبات BJJ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold text-white">بساط الجيو جيتسو</div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden group relative reveal">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="حصة جماعية" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold text-white">الحصص الجماعية</div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden group relative reveal">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="معدات القتال" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold text-white">المعدات الاحترافية</div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden group relative reveal">
+                    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=800&q=80" alt="تدريب خاص" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold text-white">التدريب الفردي</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. MEMBERSHIPS / PRICING -->
+    <section id="pricing" class="py-24 bg-brand-darker relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">خطط العضوية</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">اختر الباقة المناسبة لمستواك</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Plan 1: Starter -->
+                <div class="bg-brand-cardBg border border-white/10 rounded-2xl p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <h3 class="text-2xl font-black text-white mb-2">مبتدئ (Starter)</h3>
+                        <p class="text-gray-400 text-xs mb-6">مناسب لمن يبدأ رحلته القتالية حديثاً.</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-black text-white">$49</span>
+                            <span class="text-gray-400 text-sm"> / شهرياً</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> 8 حصص شهرياً (أي رياضة)</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> دخول صالة اللياقة العامة</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> خزانة ملابس خاصة</li>
+                        </ul>
+                    </div>
+                    <a href="#trial" class="w-full text-center bg-brand-lightGray hover:bg-white hover:text-black text-white py-3.5 rounded-xl font-bold text-sm transition-all">ابدأ عضويتك الآن</a>
+                </div>
+
+                <!-- Plan 2: Athlete (Highlighted) -->
+                <div class="bg-brand-cardBg border-2 border-brand-red rounded-2xl p-8 flex flex-col justify-between shadow-red-glow relative reveal">
+                    <span class="absolute -top-4 right-1/2 translate-x-1/2 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full uppercase">الأكثر شعبية</span>
+                    <div>
+                        <h3 class="text-2xl font-black text-white mb-2">رياضي (Athlete)</h3>
+                        <p class="text-gray-400 text-xs mb-6">الخيار المثالي للملتزمين بالتدريب المستمر.</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-black text-white">$89</span>
+                            <span class="text-gray-400 text-sm"> / شهرياً</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> حصص قتالية غير محدودة</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> دخول كامل لصالة اللياقة والمعدات</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> جليستان تدريب شخصي شهرياً</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> خصم 15% على متجر المعدات</li>
+                        </ul>
+                    </div>
+                    <a href="#trial" class="w-full text-center bg-brand-red hover:bg-brand-redHover text-white py-3.5 rounded-xl font-bold text-sm shadow-red-glow transition-all">ابدأ عضويتك الآن</a>
+                </div>
+
+                <!-- Plan 3: Elite -->
+                <div class="bg-brand-cardBg border border-white/10 rounded-2xl p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <h3 class="text-2xl font-black text-white mb-2">نخبة (Elite)</h3>
+                        <p class="text-gray-400 text-xs mb-6">للمقاتلين والمحترفين الراغبين بالقمة.</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-black text-white">$149</span>
+                            <span class="text-gray-400 text-sm"> / شهرياً</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> وصول كامل VIP لجميع المرافق</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> حصص تدريب شخصي أسبوعية</li>
+                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> برنامج تغذية مخصص وتتبع بدني</li>
+                        </ul>
+                    </div>
+                    <a href="#trial" class="w-full text-center bg-brand-lightGray hover:bg-white hover:text-black text-white py-3.5 rounded-xl font-bold text-sm transition-all">ابدأ عضويتك الآن</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CLASS SCHEDULE -->
+    <section class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">جدول الحصص</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">مواعيد التمارين الأسبوعية</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10 bg-brand-cardBg reveal">
+                <table class="w-full text-right text-sm">
+                    <thead class="bg-brand-gray text-brand-red font-black text-xs uppercase border-b border-white/10">
+                        <tr>
+                            <th class="p-4 sm:p-6">اليوم</th>
+                            <th class="p-4 sm:p-6">الحصة التدريبية</th>
+                            <th class="p-4 sm:p-6">التوقيت</th>
+                            <th class="p-4 sm:p-6">المدرب</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 font-semibold text-gray-300">
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 sm:p-6 font-bold text-white">السبت</td>
+                            <td class="p-4 sm:p-6">الملاكمة للمبتدئين</td>
+                            <td class="p-4 sm:p-6">05:00 م - 06:30 م</td>
+                            <td class="p-4 sm:p-6">كابتن كرم النجار</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 sm:p-6 font-bold text-white">الأحد</td>
+                            <td class="p-4 sm:p-6">MMA القتال المختلط</td>
+                            <td class="p-4 sm:p-6">07:00 م - 08:30 م</td>
+                            <td class="p-4 sm:p-6">كابتن طارق السعيد</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 sm:p-6 font-bold text-white">الإثنين</td>
+                            <td class="p-4 sm:p-6">الجيو جيتسو البرازيلية BJJ</td>
+                            <td class="p-4 sm:p-6">06:00 م - 07:30 م</td>
+                            <td class="p-4 sm:p-6">كابتن أليكس سيلفا</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-4 sm:p-6 font-bold text-white">الثلاثاء</td>
+                            <td class="p-4 sm:p-6">الكيك بوكسينغ واللياقة</td>
+                            <td class="p-4 sm:p-6">05:30 م - 07:00 م</td>
+                            <td class="p-4 sm:p-6">كابتن سارة محمود</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#trial" class="inline-flex items-center gap-2 text-brand-red hover:underline font-bold text-sm">
+                    <span>تحميل الجدول الكامل PDF</span>
+                    <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. TESTIMONIALS -->
+    <section class="py-24 bg-brand-darker border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">آراء الأعضاء</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">ماذا يقول أبطالنا؟</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-cardBg border border-white/5 p-8 rounded-2xl reveal">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">"النادي غير مفاهيمي عن الفنون القتالية تماماً. بيئة محترفة، مدربون يهتمون بكل تفصيلة، ومعدات جديدة بالكامل."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-red/20 text-brand-red font-black flex items-center justify-center">أ</div>
+                        <div>
+                            <p class="font-bold text-white text-sm">أحمد الشمري</p>
+                            <p class="text-xs text-gray-500">عضو منذ سنة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cardBg border border-white/5 p-8 rounded-2xl reveal">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">"حصص MMA القتالية مع كابتن طارق ممتازة جداً. التحسن في أسلوبي القتالي كان سريعاً وملحوظاً."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-red/20 text-brand-red font-black flex items-center justify-center">م</div>
+                        <div>
+                            <p class="font-bold text-white text-sm">محمود سلامة</p>
+                            <p class="text-xs text-gray-500">عضو منذ 6 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cardBg border border-white/5 p-8 rounded-2xl reveal">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">"أفضل تجربة رياضية مررت بها. التزام المدربين بالسلامة والتكنيك الصحيح ممتاز جداً للمبتدئين."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-red/20 text-brand-red font-black flex items-center justify-center">خ</div>
+                        <div>
+                            <p class="font-bold text-white text-sm">خالد منصور</p>
+                            <p class="text-xs text-gray-500">عضو منذ 3 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. FAQ SECTION (ACCORDION) -->
+    <section class="py-24 bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">الأسئلة الشائعة</h2>
+                <p class="text-3xl sm:text-5xl font-black text-white">كل ما تحتاج معرفته قبل البدء</p>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl overflow-hidden reveal">
+                    <button class="faq-btn w-full p-6 text-right font-black text-white flex justify-between items-center hover:text-brand-red transition-colors">
+                        <span>هل أحتاج لخبرة سابقة في القتال للانضمام؟</span>
+                        <span class="faq-icon text-xl text-brand-red">+</span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        لا على الإطلاق! جميع برامجنا مصممة لتستقبل المبتدئين تماماً. يقوم المدربون بتعليمك التكنيك من الصفر خطوة بخطوة.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl overflow-hidden reveal">
+                    <button class="faq-btn w-full p-6 text-right font-black text-white flex justify-between items-center hover:text-brand-red transition-colors">
+                        <span>ماذا يجب أن أحضر معي في الحصة الأولى؟</span>
+                        <span class="faq-icon text-xl text-brand-red">+</span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        احضر معك ملابس رياضية مريحة، زجاجة ماء، ومنشفة شخصية. نوفر القفازات والمعدات في التجربة الأولى.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl overflow-hidden reveal">
+                    <button class="faq-btn w-full p-6 text-right font-black text-white flex justify-between items-center hover:text-brand-red transition-colors">
+                        <span>هل تتوفر حصص خاصة بالمبتدئين؟</span>
+                        <span class="faq-icon text-xl text-brand-red">+</span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        نعم، لدينا جدول حصص منفصل ومخصص بالكامل للمبتدئين لضمان التعلم الآمن والمريح.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl overflow-hidden reveal">
+                    <button class="faq-btn w-full p-6 text-right font-black text-white flex justify-between items-center hover:text-brand-red transition-colors">
+                        <span>هل يمكنني تجربة حصة قبل الاشتراك؟</span>
+                        <span class="faq-icon text-xl text-brand-red">+</span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        بالتأكيد! نوفر حصة تجريبية مجانية 100% يمكنك حجزها عبر الموقع في أي وقت.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-brand-cardBg border border-white/5 rounded-2xl overflow-hidden reveal">
+                    <button class="faq-btn w-full p-6 text-right font-black text-white flex justify-between items-center hover:text-brand-red transition-colors">
+                        <span>هل يتوفر خيار التدريب الشخصي (1-on-1)؟</span>
+                        <span class="faq-icon text-xl text-brand-red">+</span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        نعم، لدينا باقات تدريب شخصي مخصصة مع أفضل المدربين لتحقيق أهدافك الخاصة بسرعة وبأعلى كفاءة.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. CONTACT / LOCATION -->
+    <section id="contact" class="py-24 bg-brand-darker border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="reveal">
+                    <h2 class="text-brand-red font-black text-sm tracking-widest uppercase mb-3">تواصل معنا</h2>
+                    <h3 class="text-3xl sm:text-5xl font-black text-white mb-6">تعال وتدرب معنا</h3>
+                    <p class="text-gray-400 text-base mb-8">زورنا اليوم أو تواصل مع فريقنا للإجابة على جميع استفساراتك.</p>
+
+                    <div class="space-y-6 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center shrink-0">📍</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">العنوان</h4>
+                                <p class="text-gray-400">شارع الرياضة الرئيسي، المجمع الرياضي الدولي، المبنى رقم 4</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center shrink-0">📞</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">الهاتف</h4>
+                                <p class="text-gray-400">+966 50 123 4567 / +966 11 987 6543</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center shrink-0">✉️</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">البريد الإلكتروني</h4>
+                                <p class="text-gray-400">info@championsgym.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center shrink-0">⏰</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">ساعات العمل</h4>
+                                <p class="text-gray-400">السبت - الخميس: 06:00 صباحاً - 11:00 مساءً | الجمعة: مغلق</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder Card -->
+                <div class="glass-card p-4 rounded-2xl border border-white/10 reveal h-[400px] relative flex flex-col justify-between overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="خريطة الموقع" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                    <div class="relative z-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                        <p class="font-bold text-white">موقع النادي على الخريطة</p>
+                        <p class="text-xs text-gray-400">سهل الوصول ومع سهولة توفر المواقف.</p>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="relative z-10 bg-brand-red hover:bg-brand-redHover text-white text-center py-3 rounded-xl font-bold text-sm shadow-red-glow">
+                        احصل على الاتجاهات في Google Maps
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. FINAL CTA -->
+    <section id="trial" class="py-20 bg-gradient-to-r from-brand-red via-red-700 to-black relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl sm:text-6xl font-black text-white mb-6 leading-tight">مستعد لتصبح أقوى؟</h2>
+            <p class="text-gray-200 text-lg sm:text-xl font-medium mb-8 max-w-2xl mx-auto">احجز تجربتك المجانية اليوم واكتشف إمكانياتك الحقيقية مع أفضل فريق تدريبي.</p>
+            <a href="#trial" class="inline-block bg-white hover:bg-gray-100 text-black px-10 py-5 rounded-2xl font-black text-lg shadow-2xl transition-all transform hover:scale-105">
+                احجز حصتك المجانية الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- 16. FOOTER -->
+    <footer class="bg-black py-16 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <div class="md:col-span-1">
+                    <span class="text-2xl font-black text-white tracking-tight leading-none block mb-4">نادي <span class="text-brand-red">الأبطال</span></span>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">النادي الاحترافي الأول للفنون القتالية، الملاكمة، واللياقة البدنية الشاملة.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-white mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs">
+                        <li><a href="#home" class="hover:text-brand-red transition-colors">الرئيسية</a></li>
+                        <li><a href="#programs" class="hover:text-brand-red transition-colors">البرامج</a></li>
+                        <li><a href="#trainers" class="hover:text-brand-red transition-colors">المدربون</a></li>
+                        <li><a href="#pricing" class="hover:text-brand-red transition-colors">العضويات</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-white mb-4">البرامج</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs">
+                        <li><a href="#programs" class="hover:text-brand-red transition-colors">الملاكمة Boxing</a></li>
+                        <li><a href="#programs" class="hover:text-brand-red transition-colors">MMA القتال المختلط</a></li>
+                        <li><a href="#programs" class="hover:text-brand-red transition-colors">الجيو جيتسو BJJ</a></li>
+                        <li><a href="#programs" class="hover:text-brand-red transition-colors">التدريب الشخصي</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-black text-white mb-4">تواصل معنا</h4>
+                    <p class="text-gray-400 text-xs mb-2">شارع الرياضة، المجمع الرياضي</p>
+                    <p class="text-gray-400 text-xs mb-2">+966 50 123 4567</p>
+                    <p class="text-gray-400 text-xs">info@championsgym.com</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>© 2026 نادي الأبطال للفنون القتالية. جميع الحقوق محفوظة.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-gray-300">سياسة الخصوصية</a>
+                    <a href="#" class="hover:text-gray-300">الشروط والأحكام</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    navbar.classList.add('bg-brand-dark/95', 'backdrop-blur-xl', 'shadow-2xl', 'py-2');
+                } else {
+                    navbar.classList.remove('bg-brand-dark/95', 'backdrop-blur-xl', 'shadow-2xl', 'py-2');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 3. FAQ Accordion Toggle
+            const faqBtns = document.querySelectorAll('.faq-btn');
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('.faq-icon');
+                    
+                    const isOpen = !content.classList.contains('hidden');
+                    
+                    // Close all
+                    document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+                    
+                    // Open clicked
+                    if (!isOpen) {
+                        content.classList.remove('hidden');
+                        icon.textContent = '−';
+                    }
+                });
+            });
+
+            // 4. Reveal Animations on Scroll (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
